@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>yazilimkodlama.com</title>
+</head>
+<body>
+ 
+    Yorum : <br>
+    <textarea rows="100" id="yazi"></textarea>
+    <div id="sonuc"></div>
+    
+    
+    
+<script>
+      var yazi=document.querySelector('#yazi');  
+      var sonuc=document.querySelector('#sonuc');  
+    
+    yazi.oninput=function(){
+        var maksimum=130;
+        this.value=this.value.substr(0,maksimum);
+        var kalan= maksimum-this.value.length;
+        sonuc.innerHTML='Kalan Karakter : '+kalan;
+    }
+    </script>
+    
+</body>
+</html>
