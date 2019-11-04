@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>E-mail Kontrol</title>
+</head>
+
+<body>
+    <script>
+        function tikla() {
+            let re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;?:\s@\"]{2,})$/i;
+
+            let string = prompt("E-mail adresinizi giriniz");
+
+            if (re.exec(string)) {
+                document.write('Bu e-mail adresidir.' + "<br>");
+            } else
+                document.write('Bu e-mail adresi değildir.' + "<br>");
+            document.write(string);
+        }
+    </script>
+    <button type="button" onclick="tikla()">Tıkla ve Kontrol Ettir</button>
+</body>
+
+</html>

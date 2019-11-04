@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Popup Video</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+</head>
+
+<body>
+    <div id="uyari" title="YazilimBilisim.net" style="display:none;">
+        <iframe width="100%" height="600px" src="https://www.youtube.com/embed/Nad1wm8esUo" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            // sayfa açılışında dialog kutusunun gelmesi için her hangi bir buton için yerleştirmedik
+            $("#uyari").dialog({
+                width: 1000, //dialog kutusunun genişliği
+                modal: true, //arkaplanın koyu olması
+                autoOpen: true, //gerek yok ama otomatik açılması için
+                position: { my: "center top", at: "center top" } //konum
+            });
+        })
+    </script>
+</body>
+
+</html>

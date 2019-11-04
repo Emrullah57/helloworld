@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hoş Geldin!</title>
+<script type="text/JavaScript">
+let adres ="http://google.com";
+let pencere;
+function pencere_ac(){
+pencere =window.open(adres);
+}
+function pencere_kapat() {
+    pencere.close();
+}
+</script>
+</head>
+<body>
+    <input type="button" value="Pencere Aç" onclick="pencere_ac()"  />
+    <input type="button" value="Pencere Kapat" onclick="pencere_kapat()" />
+</body>
+</html>

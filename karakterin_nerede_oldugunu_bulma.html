@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+<p id="p1">Ahmet Cansever</p>
+ 
+<button onclick="Ara()">Bul</button>
+ 
+<p id="demo">Metin içindeki "c" lerin yeri</p>
+<p id="demo2">Metin içindeki "C" lerin yeri</p>
+ 
+<script>
+function Ara() {
+    var str = document.getElementById("p1").innerHTML;
+    var konum = str.search("c");
+    var konum2= str.search("C");
+    document.getElementById("demo").innerHTML = konum;
+    document.getElementById("demo2").innerHTML = konum2;
+}
+</script>
+ 
+</body>
+</html>

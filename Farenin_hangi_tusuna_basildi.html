@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <title>Farenin Hangi Tuşuna Basıldı</title>
+    <link rel="shortcut icon" href="Resimler/mosue_click.png">
+<head>
+    <script type="text/javascript">
+        function hangibuton(event){
+            if (event.button==2) {
+                alert("Sağ Buton");
+            }
+            else if (event.button==1) {
+                alert("Sol Buton")
+            }
+            else{
+                alert("Orta Buton")
+            }
+        }
+    </script>
+</head>
+<body onmousedown="hangibuton(event)">
+<p>Fare ile Tıklayın</p>
+</body>
+</html>
