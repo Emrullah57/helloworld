@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Chechbox</title>
+        <script type="text/javascript" lang="javascript">
+            function ekranayaz() {
+                document.secim.degisken.value = "";
+                for (i = 0; i < document.secim.hobi.length; i++) {
+                    if (document.secim.hobi[i].checked) {
+                        document.secim.degisken.value += document.secim.hobi[i].value + ", ";
+                    }
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <form name="secim">
+            Hobileriniz<br />
+            <input type="checkbox" name="hobi" value="Televizyon" />Televizyon<br />
+            <input type="checkbox" name="hobi" value="Kitap Okumak" />Kitap Okumak<br />
+            <input type="checkbox" name="hobi" value="İnternet" />İnternet<br />
+            <input type="checkbox" name="hobi" value="Müzik Dinlemek" />Müzik Dinlemek<br />
+            <input type="button" value="Gönder" onclick="ekranayaz()" />
+            <input type="reset" value="Temizle" /><br />
+            Seçtiğiniz Hobi =<input type="text" name="degisken" />
+        </form>
+    </body>
+</html>

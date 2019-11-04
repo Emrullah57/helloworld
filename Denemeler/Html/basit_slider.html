@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Basit Slider</title>
+    <style>
+        #slider {
+            font: 19px sans-serif;
+            margin: 0px auto;
+            position: relative;
+            width: 600px;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        #kontrol {
+            position: absolute;
+            right: 0px;
+            bottom: 10px;
+        }
+
+        #kontrol a {
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="slider">
+          <div class="slayt"><img src="https://unsplash.it/600/300?image=0" /></div>
+          <div class="slayt"><img src="https://unsplash.it/600/300?image=1" /></div>
+          <div class="slayt"><img src="https://unsplash.it/600/300?image=2" /></div>
+          <div class="slayt"><img src="https://unsplash.it/600/300?image=3" /></div>
+          <div id="kontrol">
+                <a href="javascript:oncekiSlayt()">Önceki</a>
+                <a href="javascript:sonrakiSlayt()">Sonraki</a>
+              </div>
+    </div>
+    <script>
+        "use strict";
+        var _slayt = document.getElementsByClassName("slayt");
+        var slaytSayisi = _slayt.length;
+        var slaytNo = 0;
+        var i = 0;
+
+        slaytGoster(slaytNo);
+
+        function sonrakiSlayt() {
+            slaytNo++;
+            slaytGoster(slaytNo);
+        }
+
+        function oncekiSlayt() {
+            slaytNo--;
+            slaytGoster(slaytNo);
+        }
+
+        function slaytGoster(slaytNumarasi) {
+            slaytNo = slaytNumarasi;
+
+            if (slaytNumarasi >= slaytSayisi) slaytNo = 0;
+
+            if (slaytNumarasi < 0) slaytNo = slaytSayisi - 1;
+
+            for (i = 0; i < slaytSayisi; i++) {
+                _slayt[i].style.display = "none";
+            }
+
+            _slayt[slaytNo].style.display = "block";
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Karakter Sayısı</title>
+    <link rel="shortcut icon" href="indir.png">
+</head>
+<body>
+ 
+    Yorum : <br>
+    <textarea rows="10" id="yazi"></textarea>
+    <div id="sonuc"></div>
+    
+    
+    
+<script>
+      var yazi=document.querySelector('#yazi');  
+      var sonuc=document.querySelector('#sonuc');  
+    
+    yazi.oninput=function(){
+        var maksimum=17;
+        this.value=this.value.substr(0,maksimum);
+        var kalan= maksimum-this.value.length;
+        sonuc.innerHTML='Kalan Karakter : '+kalan;
+    }
+    </script>
+    
+</body>
+</html>

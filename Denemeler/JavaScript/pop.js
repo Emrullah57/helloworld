@@ -1,0 +1,10 @@
+let dizi = [1,2,3,4,5,6,7,8,9,10];
+console.log("Dizinin ilk hali: ");
+console.log(dizi);
+console.log("<br>");
+var d1 = dizi.pop();
+var d2 = dizi.pop();
+console.log("Dizinin son hali: ");
+console.log(dizi);
+console.log("<br>");
+console.log("Koparılan değerler: "+ d1 + ", " + d2);

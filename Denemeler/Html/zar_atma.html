@@ -1,0 +1,42 @@
+<!doctype html>
+<hmtl>
+
+    <head>
+        <title></title>
+        <style>
+            div.zar {
+                float: left;
+                width: 32px;
+                background: #f5f5f5;
+                border: #999 1px solid;
+                padding: 10px;
+                font-size: 24px;
+                text-align: center;
+                margin: 5px;
+            }
+        </style>
+        <script>
+            function zarAt() {
+                let zar1 = document.getElementById("zar1");
+                let zar2 = document.getElementById("zar2");
+                let sattus = document.getElementById("status");
+                let d1 = Math.floor(Math.random() * 6) + 1;
+                let d2 = Math.floor(Math.random() * 6) + 1;
+                let zarToplam = d1 + d2;
+                zar1.innerHTML = d1;
+                zar2.innerHTML = d2;
+                status.innerHTML = "Zarlar Toplamı = " + zarToplam;
+                if (d1 == d2) {
+                    status.innerHTML = "Çift Attın Tebrikler";
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="zar1" class="zar">0</div>
+        <div id="zar2" class="zar">0</div>
+        <button onclick="zarAt()">ZAR AT</button>
+        <div id="status"></h2>
+    </body>
+</hmtl>

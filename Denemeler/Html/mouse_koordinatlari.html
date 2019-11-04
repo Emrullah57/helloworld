@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<title>Mouse Koordinatları</title>
+<link rel="shortcut icon" href="Resimler/mouse_imleci.jpg">
+
+<head>
+    <script type="text/javascript">
+        function show_coords(events) {
+            x = event.clientX;
+            y = event.clientY;
+            document.koor.xkoor.value = x;
+            document.koor.ykoor.value = y;
+        }
+    </script>
+</head>
+
+<body onmousemove="show_coords(event)">
+    <p>Mouse Koordinatları</p>
+    <form name="koor" method="POST">
+        X : <input type="text" name="xkoor"> <br>
+        Y : <input type="text" name="ykoor"> <br>
+    </form>
+</body>
+
+</html>

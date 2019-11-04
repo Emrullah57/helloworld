@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sayi Tahmin Oyunu</title>
+    <style>
+        #sayiTahmin {
+            width: 100%;
+            text-align: center;
+        }
+
+        input,
+        button {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sayiTahmin">
+        <input type="text" id="sayi" />
+        <button id="tahminEt" disabled>Tahmin Et</button>
+        <button id="yeniOyun">Yeni OYUN</button>
+        <p id="sonuc"></p>
+    </div>
+    <script>
+    "use strict";
+    let hakSayisi = 0;
+    let rastgeleSayi = 0;
+    let _tahminEt = document.getElementById("tahminEt");
+    let _yeniOyun = document.getElementById("yeniOyun")
+    let _sonuc = document.getElementById("sonuc");
+    let _sayi = document.getElementById("sayi");
+
+    _yeniOyun.onclick = yeni;
+    _tahminEt.onclick = tahmin;
+
+    function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function yeni() {
+        rastgeleSayi = randomInt(0, 11);
+        hakSayisi = 10;
+        _sonuc.innerHTML = "";
+        _sayi.value = "";
+        _tahminEt.disabled = false;
+        _yeniOyun.disabled = true;
+    }
+
+    function tahmin() {
+        if (hakSayisi == 0) return;
+        let  girilenSayi = parseInt(_sayi.value);
+        let mesaj = "";
+        if (isNaN(girilenSayi)) retrun; 
+            
+        if (rastgeleSayi > girilenSayi) {
+            mesaj = "Daha BÜYÜK değer deneyin";
+        } else if (girilenSayi > rastgeleSayi) {
+            mesaj = "Daha küçük değer deneyin";
+        } else {
+            mesaj = "Tebrikler!!!";
+            _tahminEt.disabled = true;
+            _yeniOyun.disabled = false;
+        }
+        hakSayisi--;
+        _sonuc.innerHTML = mesaj;
+        _sonuc.innerHTML += "<br />"
+        _sonuc.innerHTML += "Kalan hak sayısı : " + hakSayisi;
+        if (hakSayisi == 0) {
+            _tahminEt.disabled = true;
+            _yeniOyun.disabled = false;
+        }
+    }
+    </script>
+</body>
+
+</html>

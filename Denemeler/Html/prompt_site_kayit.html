@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prompt ile Siteye Kayıt Olma</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid red
+        }
+
+        th {
+            background-color: grey;
+        }
+
+        tr {
+            background-color: aquamarine;
+        }
+    
+        td{
+            text-align: center;
+        }
+
+        hr{
+            background-color: darkslategray;
+        }
+    </style>
+</head>
+
+<body onload="kayit()">
+
+    <center>
+        <input type="button" value="Kayıt Ol" onclick="kayit()"
+            style="border:2px thick black; border-radius: 10px; height:30px; background-color:gray;">
+        <strong>
+            <h1>Kayıt Bilgileriniz</h1>
+        </strong>
+        <table id="demoo">
+            <tr>
+                <th>Adınız Soyadınız</th>
+                <th>Yeriniz</th>
+                <th>Mesleğiniz</th>
+                <th>Kullanıc Adınız</th>
+                <th>Şifreniz</th>
+            </tr>
+            <tr>
+                <td id="demo2"></td>
+                <td id="demo3"></td>
+                <td id="demo4"></td>
+                <td id="demo5"></td>
+                <td id="demo6"></td>
+            </tr>
+        </table>
+
+        <p id="demo"></p>
+        <p id="demo1"></p>
+    </center>
+    <script>
+        function kayit() {
+            let adSoyad = prompt("Adınız ve Soyadınız:");
+            let yer = prompt("Yaşadığınız Yer:");
+            let meslek = prompt("Mesleğiniz:");
+            let kullaniciAdi = prompt("Kullanıcı Adı:");
+            let sifre = prompt("Şifre:");
+            let sayac = 0;
+            sayac +=1;
+            let onay = confirm("Siteye kayıt olmak istediğinize emin misiniz?");
+            if (onay == true && sayac == 1) {
+                document.getElementById("demo").innerHTML = "Siteye başarıyla kayıt oldunuz!" + "<br>";
+                document.getElementById("demo1").innerHTML = "<strong><hr></strong>";
+                document.getElementById("demo2").innerHTML = adSoyad;
+                document.getElementById("demo3").innerHTML = yer;
+                document.getElementById("demo4").innerHTML = meslek;
+                document.getElementById("demo5").innerHTML = kullaniciAdi;
+                document.getElementById("demo6").innerHTML = sifre;
+            }
+             else {
+                document.getElementById("demo").innerHTML = "Siteye kayıt başarısız oldu!" + "<br>";
+                document.getElementById("demo1").innerHTML = "<hr/>";
+                document.getElementById("demo2").innerHTML = "";
+                document.getElementById("demo3").innerHTML = "";
+                document.getElementById("demo4").innerHTML = "";
+                document.getElementById("demo5").innerHTML = "";
+                document.getElementById("demo6").innerHTML = "";
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>
